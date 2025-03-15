@@ -11,6 +11,6 @@ export class AppComponent  implements OnInit{
   title = 'clicks-and-tweaks';
 
   ngOnInit(): void {
-    console.log("test");
+    console.log("home");
   }
 }
