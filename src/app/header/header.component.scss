@@ -71,7 +71,7 @@
   }
 }
 
-/* Mobile Styles */
+/*Styles for mobile view */
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -96,7 +96,7 @@
     display: block;
   }
   
-  /* Transform hamburger into X when menu is open */
+  /* Transform hamburger into X when the menu is open */
   #menu-toggle:checked ~ .nav {
     display: flex;
   }
