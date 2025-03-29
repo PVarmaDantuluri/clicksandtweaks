@@ -1,0 +1,14 @@
+:host {
+    display: block;
+  }
+  body {
+    padding-top: 80px;
+  }
+  
+  .main-content {
+    background: #90c1ec;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+    color: white;
+    margin-top: 400px; 
+  }
