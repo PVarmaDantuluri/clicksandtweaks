@@ -1,0 +1,22 @@
+<section class="gallery-section">
+  <div class="gallery-header">
+    <h1>THE GALLERY</h1>
+    <p>
+      These are some of our most recent works. We use tools of
+      <em>documentary reportage</em>, <em>portraiture</em>,
+      <em>fashion photography</em>, and <em>filmmaking</em> to create timeless
+      visuals.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <img
+      *ngFor="let img of images"
+      [src]="'assets/gallery/' + img"
+      [alt]="img"
+      class="fade-in"
+      [appFadeInOnScroll]="0.5"
+      loading="lazy"
+    />
+  </div>
+</section>
