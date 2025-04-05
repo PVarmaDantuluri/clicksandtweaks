@@ -6,12 +6,13 @@ import { HeaderComponent } from './header/header.component';
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent  implements OnInit{
+export class AppComponent implements OnInit {
   title = 'clicks-and-tweaks';
 
   ngOnInit(): void {
-    console.log("home");
+    console.log('home');
+    console.log('tesing the app component');
   }
 }
