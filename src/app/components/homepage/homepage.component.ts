@@ -6,7 +6,7 @@ import { FadeInOnScrollDirective } from '../../directives/fade-in-on-scroll.dire
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, FadeInOnScrollDirective, RouterModule],
+  imports: [FadeInOnScrollDirective],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })
