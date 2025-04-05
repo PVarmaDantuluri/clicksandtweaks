@@ -5,12 +5,13 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent  implements OnInit{
+export class AppComponent implements OnInit {
   title = 'clicks-and-tweaks';
 
   ngOnInit(): void {
-    console.log("home");
+    console.log('home');
+    console.log('tesing the app component');
   }
 }
