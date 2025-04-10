@@ -14,6 +14,7 @@
       *ngFor="let img of images"
       [src]="'assets/gallery/' + img"
       [alt]="img"
+      loading="lazy"
       class="fade-in"
       [appFadeInOnScroll]="0.5"
       loading="lazy"

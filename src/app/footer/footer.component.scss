@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap");
+
+.footer {
+  background-color: #fafafa;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  color: #111;
+
+  .footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    .rights {
+      font-size: 0.9rem;
+      color: #777;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    .quote {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .rights {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Media Query: Phones (480px and below)
+@media (max-width: 480px) {
+  .footer-content {
+    h2 {
+      font-size: 1rem;
+    }
+
+    .quote {
+      font-size: 0.7rem;
+    }
+
+    .rights {
+      font-size: 0.5rem;
+    }
+  }
+}
