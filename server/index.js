@@ -24,10 +24,13 @@ console.log(`✅ Using Cloudinary account: ${CLOUD_NAME}`);
 console.log(`✅ Using Cloudinary account: ${API_SECRET}`);
 
 app.get("/api/images", async (req, res) => {
-  const folder = req.query.folder || 'homepage';
+  const folder = req.query.folderName;
   console.log(`📷 Fetching images from Cloudinary folder: ${folder}...`);
 
   try {
+    if(!folder) {
+      throw new Error('specify folder name')
+    }
     const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/image/upload`;
 
     const response = await axios.get(url, {

@@ -1,26 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CloudinaryFolder } from '../../../models/folders';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CloudinaryService {
-  private cloudName = 'dgbqlrgod'; // Replace with your Cloudinary Cloud Name
-  private uploadPreset = 'clicksandtweaks'; // Replace with your Upload Preset
-  private uploadUrl = `https://api.cloudinary.com/v1_1/${this.cloudName}/upload`;
-
-  
   constructor() {}
 
   // Upload multiple images
-  uploadImages(files: File[]): Promise<string[]> {
-    const uploadPromises = files.map(file => this.uploadFile(file));
+  uploadImages(files: File[], folderName: CloudinaryFolder): Promise<string[]> {
+    const uploadPromises = files.map(file => this.uploadFile(file, folderName));
     return Promise.all(uploadPromises);
   }
 
   // Upload a single file
-  private async uploadFile(file: File, folder: string = 'homepage'): Promise<string> {
+  private async uploadFile(file: File, folderName: CloudinaryFolder): Promise<string> {
     const cloudinaryInfo = localStorage.getItem('cloudinaryInfo');
     if (cloudinaryInfo) {
       const { cloudName, uploadPreset } = JSON.parse(cloudinaryInfo);
@@ -28,7 +24,7 @@ export class CloudinaryService {
       const formData = new FormData();
       formData.append('file', file);
       formData.append('upload_preset', uploadPreset);
-      formData.append('folder', folder); // Dynamic folder name
+      formData.append('folder', folderName); // Dynamic folder name
   
       const response = await fetch(uploadUrl, {
         method: 'POST',
@@ -46,8 +42,8 @@ export class CloudinaryService {
   }
   
 
-  async getUploadedImages(folder: string = 'homepage'): Promise<string[]> {
-    const response = await fetch(`http://localhost:3000/api/images?folder=${folder}`);
+  async getUploadedImages(folderName: CloudinaryFolder): Promise<string[]> {
+    const response = await fetch(`http://localhost:3000/api/images?folder=${folderName}`);
     if (!response.ok) {
       throw new Error('Failed to fetch images');
     }

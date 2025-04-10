@@ -2,8 +2,11 @@
     <h2>Upload & Retrieve Images from Cloudinary</h2>
   
     <input type="file" multiple (change)="onFileSelected($event)">
-    <button (click)="uploadImages()" [disabled]="isUploading">
-      {{ isUploading ? 'Uploading...' : 'Upload Images' }}
+    <button (click)="uploadImages(cloudinaryFolder.Homepage)" [disabled]="isUploading">
+      {{ isUploading ? 'Uploading...' : 'Upload Images to homepage' }}
+    </button>
+    <button (click)="uploadImages(cloudinaryFolder.Gallery)" [disabled]="isUploading">
+      {{ isUploading ? 'Uploading...' : 'Upload Images to gallery' }}
     </button>
   
     <h3>Uploaded Images</h3>
