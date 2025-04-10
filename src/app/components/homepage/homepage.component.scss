@@ -1,17 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap");
-
-:root {
-  /* Fonts */
-  --primary-font: "Cormorant Garamond", serif;
-  --secondary-font: "Cormorant Garamond", serif;
-
-  /* Colors */
-  --text-color: #111111;
-  --background-color: #f8f6f2;
-
-  /* Spacing */
-  --section-padding: 5vw;
-}
+@use "variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap");
 
 /* Global Reset */
 * {
@@ -24,38 +12,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-color);
-  padding: var(--section-padding);
+  background-color: $background-color;
+  padding: $section-padding;
   height: 100vh;
   overflow: hidden;
 
   .text-content {
+    margin-top: 60px;
     flex: 1;
     max-width: 40%;
     text-align: center;
     padding-right: 4vw;
 
     h1 {
-      font-family: var(--primary-font);
+      font-family: $primary-font;
       font-size: 3.5rem;
       font-weight: 400;
       letter-spacing: 1px;
       line-height: 1.2;
-      color: var(--text-color);
+      color: $text-color;
     }
 
     p {
-      font-family: var(--secondary-font);
+      font-family: $primary-font;
       font-size: 1rem;
-      font-weight: 100;
+      font-weight: 300;
       line-height: 1.6;
       margin-top: 2rem;
-      color: var(--text-color);
+      color: #333;
       max-width: 90%;
     }
 
     em {
       font-style: italic;
+    }
+  }
+
+  .hire-button {
+    display: inline-block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    background-color: $background-color;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 50px;
+    margin-top: 2rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 
@@ -136,11 +148,11 @@
   padding: 2vw 5vw;
 
   p {
-    font-family: var(--secondary-font);
+    font-family: $primary-font;
     font-size: 1rem;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 1.6;
-    color: var(--text-color);
+    color: #333;
     max-width: 45%;
     margin: 0 auto;
   }
@@ -245,7 +257,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: var(--secondary-font);
+      font-family: $primary-font;
       font-size: 3rem;
       font-weight: 500;
       color: black;
@@ -254,7 +266,7 @@
       text-align: center;
 
       a {
-        color: var(--text-color);
+        color: $text-color;
       }
     }
   }
@@ -419,7 +431,7 @@
 .gallery-link {
   display: inline-block;
   margin-top: 3rem;
-  font-family: var(--primary-font);
+  font-family: $primary-font;
   font-size: 1.2rem;
   text-decoration: underline;
   color: #111;

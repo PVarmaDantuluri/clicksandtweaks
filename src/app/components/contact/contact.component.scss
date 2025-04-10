@@ -1,0 +1,250 @@
+.testimonial-video {
+  margin-top: 60px;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  margin-bottom: 1%;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    max-width: 80%;
+
+    p {
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-style: italic;
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+.contact-form {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: "EB Garamond", serif;
+  font-size: 16px;
+  color: #111;
+
+  .required {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+
+    .form-group {
+      flex: 1;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 2.5rem;
+
+    label {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .helper {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #000;
+      background: transparent;
+      padding: 0.4rem 0;
+      font-family: inherit;
+      font-size: 1.05rem;
+      color: #000;
+      outline: none;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+
+      button {
+        font-family: "EB Garamond", serif;
+        font-size: 1rem;
+        border: 1px solid #000;
+        background: transparent;
+        padding: 0.4rem 1.2rem;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease;
+
+        &:hover {
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+
+    .file-upload {
+      border: 1px dashed #999;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      cursor: pointer;
+
+      .file-box {
+        display: inline-block;
+        cursor: pointer;
+        color: #444;
+
+        .plus {
+          font-size: 2.5rem;
+          margin-bottom: 0.5rem;
+          line-height: 1;
+        }
+
+        div {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .submit-button {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 0.9rem 2.5rem;
+      border: none;
+      border-radius: 9999px;
+      font-family: "EB Garamond", serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #333;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-video {
+    margin-top: 50px;
+    height: auto;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      0 92%
+    ); // more subtle slant on smaller screens
+
+    .testimonial-text {
+      max-width: 100%;
+
+      p {
+        font-size: 1.6rem;
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 1rem;
+
+    .input-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+
+      label {
+        font-size: 0.95rem;
+      }
+
+      .helper {
+        font-size: 0.85rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      textarea {
+        font-size: 1rem;
+      }
+
+      .options {
+        flex-direction: column;
+        gap: 0.5rem;
+
+        button {
+          width: 100%;
+          font-size: 1rem;
+        }
+      }
+
+      .file-upload {
+        padding: 1.5rem 0.5rem;
+
+        .file-box {
+          .plus {
+            font-size: 2rem;
+          }
+
+          div {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .submit-button {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  }
+}
