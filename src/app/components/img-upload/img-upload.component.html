@@ -1,0 +1,18 @@
+<div class="upload-container">
+    <h2>Upload & Retrieve Images from Cloudinary</h2>
+  
+    <input type="file" multiple (change)="onFileSelected($event)">
+    <button (click)="uploadImages(cloudinaryFolder.Homepage)" [disabled]="isUploading">
+      {{ isUploading ? 'Uploading...' : 'Upload Images to homepage' }}
+    </button>
+    <button (click)="uploadImages(cloudinaryFolder.Gallery)" [disabled]="isUploading">
+      {{ isUploading ? 'Uploading...' : 'Upload Images to gallery' }}
+    </button>
+  
+    <h3>Uploaded Images</h3>
+    <div class="image-grid">
+      <div *ngFor="let url of uploadedImages" class="image-preview">
+        <img [src]="url" alt="Uploaded Image">
+      </div>
+    </div>
+  </div>
