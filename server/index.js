@@ -24,7 +24,7 @@ console.log(`✅ Using Cloudinary account: ${CLOUD_NAME}`);
 console.log(`✅ Using Cloudinary account: ${API_SECRET}`);
 
 app.get("/api/images", async (req, res) => {
-  const folder = req.query.folderName;
+  const folder = req.query.folder;
   console.log(`📷 Fetching images from Cloudinary folder: ${folder}...`);
 
   try {
