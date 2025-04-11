@@ -12,7 +12,7 @@ import { CloudinaryFolder } from '../../models/folders';
 })
 export class ImgUploadComponent  implements OnInit{
   selectedFiles: File[] = [];
-  uploadedImages: string[] = [];
+  uploadedImages: { url: string; public_id: string }[] = [];
   isUploading = false;
   cloudinaryFolder = CloudinaryFolder
 
@@ -47,4 +47,17 @@ export class ImgUploadComponent  implements OnInit{
   async loadImages() {
     this.uploadedImages = await this.cloudinaryService.getUploadedImages(CloudinaryFolder.Homepage);
   }
+
+  onDeleteImage(public_id: string, index: number) {
+    this.cloudinaryService.deleteImage(public_id).subscribe({
+      next: () => {
+        this.uploadedImages.splice(index, 1);
+        console.log(`🗑️ Deleted image with public_id: ${public_id}`);
+      },
+      error: (err) => {
+        console.error('❌ Failed to delete image:', err);
+      }
+    });
+  }
+  
 }
